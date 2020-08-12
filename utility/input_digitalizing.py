@@ -1,4 +1,8 @@
 def to_number(number_as_text: str) -> int or float:
+    """
+
+    :rtype: object
+    """
     if "." in number_as_text:
         number_as_digit = float(number_as_text)
     else:

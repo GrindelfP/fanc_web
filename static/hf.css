@@ -70,3 +70,7 @@ input[type=submit] {
 select {
   font-size:        125%;
 }
+
+div {
+    word-break: break-all;
+}

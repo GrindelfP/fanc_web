@@ -3,16 +3,17 @@ from utility.input_digitalizing import to_number
 
 
 def calculate(first_number: int or float, operator_symbol: str, second_number: int or float) \
-                                                                                               -> int or float or str:
+                                                                                     -> int or float or str:
+    first_number_as_digit = to_number(first_number)
+    second_number_as_digit = None
+    if second_number is not "":
+        second_number_as_digit = to_number(second_number)
     result = None
     error = None
     operator_checked = operators_dictionary[operator_symbol]
 
-    if operator_symbol == "!":
-        second_number = "0"
-
     try:
-        result = operator_checked.calculation(to_number(first_number), to_number(second_number))
+        result = operator_checked.calculation(first_number_as_digit, second_number_as_digit)
     except Exception as ex:
         error = str(ex)
 
