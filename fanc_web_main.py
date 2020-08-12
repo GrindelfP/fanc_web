@@ -1,0 +1,34 @@
+from flask import Flask, render_template, request
+
+from calculation.calculation import calculate
+from operators.operators_lists import operators_symbol_list
+from utility.greetings import operators_as_strings
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def main_page() -> "html":
+    operators_list = operators_as_strings()
+    print(operators_list)
+    return render_template("main.html",
+                           the_title="Fantastic Calculator V2.0",
+                           operators=operators_list,
+                           operators_list_length=len(operators_list),
+                           operators_symbol_list=operators_symbol_list)
+
+
+@app.route("/calculate", methods=["POST"])
+def d0_calculation() -> "html":
+    first_number = request.form["first_number"]
+    operator = request.form["operator"]
+    second_number = request.form["second_number"]
+    title = "Here are your result:"
+    result = calculate(first_number, operator, second_number)
+    return render_template("result.html",
+                           the_title=title,
+                           the_result=result)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)

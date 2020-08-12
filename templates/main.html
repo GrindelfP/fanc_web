@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ the_title }}</h2>
+<p>Let's do some Math! This calculator can do following operations:</p>
+<ul>
+    {%for i in range(0, operators_list_length)%}
+
+    <li>{{operators[i]}}</li>
+    {%endfor%}
+</ul>
+<p>Please, if your number is decimal, use '.'</p>
+
+<form method='POST' action='/calculate'>
+    <table>
+        <tr><td>First number:</td><td><input name='first_number' type='number' width='60'></td></tr>
+        <tr><td>Oprerator:</td><td>
+            <select name="operator">
+                {% for operator in operators_symbol_list %}
+                <option value="{{ operator }}">{{ operator }}</option>
+                {% endfor %}
+            </select>
+        </td></tr>
+        <tr><td>Second number/Base:</td><td><input name='second_number' type='number' ></td></tr>
+    </table>
+    <p>When you're ready, click this button:</p>
+    <p><input value='Do it!' type='SUBMIT'></p>
+</form>
+
+{% endblock %}
