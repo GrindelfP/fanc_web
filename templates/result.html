@@ -2,9 +2,18 @@
 
 {% block body %}
 
-<h2>{{ the_title }}</h2>
+<h2>
+    {{ the_title }}
+</h2>
 
-<p>The result of your calculation is:</p>
-<h3>{{ the_result }}</h3>
+<h3>
+    {{ the_result }}
+</h3>
+
+<form method='GET' action='/'>
+        <p>
+            <input value='Back' type='SUBMIT'>
+        </p>
+</form>
 
 {% endblock %}

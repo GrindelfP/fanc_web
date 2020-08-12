@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
-
 from calculation.calculation import calculate
-from operators.operators_lists import operators_symbol_list
+from operators.operators_dictionariy_and_list import operators_symbol_list
 from utility.greetings import operators_as_strings
 
 app = Flask(__name__)
@@ -19,7 +18,7 @@ def main_page() -> "html":
 
 
 @app.route("/calculate", methods=["POST"])
-def d0_calculation() -> "html":
+def do_calculation() -> "html":
     first_number = request.form["first_number"]
     operator = request.form["operator"]
     second_number = request.form["second_number"]

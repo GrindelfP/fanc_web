@@ -2,15 +2,7 @@
 
 {% block body %}
 
-<h2>{{ the_title }}</h2>
-<p>Let's do some Math! This calculator can do following operations:</p>
-<ul>
-    {%for i in range(0, operators_list_length)%}
-
-    <li>{{operators[i]}}</li>
-    {%endfor%}
-</ul>
-<p>Please, if your number is decimal, use '.'</p>
+<p>Are you sure, that you printed a number? Try again!</p>
 
 <form method='POST' action='/calculate'>
     <table>
