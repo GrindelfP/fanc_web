@@ -8,8 +8,6 @@ def print_instructions() -> str:
 
     operators_with_description = str()
     operations_map = operators_dictionary
-    new_line = "" \
-               ""
     for key, value in operations_map.items():
         operators_with_description = operators_with_description + key + " -> " + value.description
     return instructions_text_beginning + operators_with_description + instructions_text_ending
