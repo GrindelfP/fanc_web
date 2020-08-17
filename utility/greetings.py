@@ -7,8 +7,7 @@ def print_instructions() -> str:
     instructions_text_ending = "Please, if your number is decimal, use '.'"
 
     operators_with_description = str()
-    operations_map = operators_dictionary
-    for key, value in operations_map.items():
+    for key, value in operators_dictionary.items():
         operators_with_description = operators_with_description + key + " -> " + value.description
     return instructions_text_beginning + operators_with_description + instructions_text_ending
 
