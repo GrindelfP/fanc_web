@@ -1,15 +1,11 @@
 from operators.operators_dictionariy_and_list import operators_dictionary
 
 
-def print_instructions() -> str:
-    instructions_text_beginning = "Let's do some Math! This calculator can do " \
-                                  "following operations:"
-    instructions_text_ending = "Please, if your number is decimal, use '.'"
-
+def print_operators_dict() -> str:
     operators_with_description = str()
     for key, value in operators_dictionary.items():
         operators_with_description = operators_with_description + key + " -> " + value.description
-    return instructions_text_beginning + operators_with_description + instructions_text_ending
+    return operators_with_description
 
 
 def operators_as_strings() -> list:
