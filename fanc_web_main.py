@@ -7,6 +7,7 @@ from utility.input_validation import input_validation
 app = Flask(__name__)
 
 
+
 @app.route("/")
 def main_page() -> "html":
     operators_list = operators_as_strings()
